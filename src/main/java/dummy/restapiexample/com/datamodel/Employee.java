@@ -45,8 +45,8 @@ public class Employee {
         return id;
     }
 
-    public void setEmployeeId(Response response) {
-        this.id = response.jsonPath().get("id");
+    public void setEmployeeId(String employeeId) {
+        this.id = employeeId;
     }
 
     public String toString() {

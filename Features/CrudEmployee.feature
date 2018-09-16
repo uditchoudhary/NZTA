@@ -12,7 +12,7 @@ Feature: Employee management services
     Given "lin" has left the company
     When admin deletes the profile
     Then it should be deleted
-    And admin should see following message
+    And admin should see following "success" message
     """
     successfully! deleted Records
     """

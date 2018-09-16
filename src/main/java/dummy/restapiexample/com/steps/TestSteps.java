@@ -1,5 +1,6 @@
 package dummy.restapiexample.com.steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -44,28 +45,24 @@ public class TestSteps extends BaseSteps{
 
     @Given("^\"([^\"]*)\" has left the company$")
     public void hasLeftTheCompany(String user) {
-
-        employee = setEmployeeProfile(user);
-        request = given();
+        createDeleteUserRequest(user,true);
     }
 
     @When("^admin deletes the profile$")
     public void adminDeletesTheProfile() {
-        response = request.when().delete(getValue("delete.uri")+"/"+ employee.getEmployeeId());
+        sendDeleteUserRequest(request);
     }
+
 
     @Then("^it should be deleted$")
     public void itShouldBeDeleted() {
-        response.then().statusCode(200);
-
+        verifyUserDeleted(response);
     }
 
-    @And("^admin should see following message$$")
-    public void adminShouldSeeFollowingMessage(String expectedMessage){
 
-        String actualMessage = response.jsonPath().get("success").toString();
-        System.out.print(expectedMessage + ": "+actualMessage);
-        Assert.assertTrue(actualMessage.contains(expectedMessage));
-
+    @And("^admin should see following \"([^\"]*)\" message$")
+    public void adminShouldSeeFollowingMessage(String result, String expectedMessage) {
+        verifyJsonResponseMessage(result,expectedMessage);
     }
+
 }
