@@ -2,9 +2,6 @@ package dummy.restapiexample.com.datamodel;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 /**
  * Created by udit on 13/09/18.

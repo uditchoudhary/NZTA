@@ -29,10 +29,30 @@ Following tools and softwares are used to build the project:
 
 ## Running the tests
 
+* Run with default environment (dummy)
 In terminal, run:
 ```
 mvn clean test
 ```
+* Run with specific environment (dev)
+```
+mvn clean test -P dev
+```
+
+### Create different environment (e.g. sit)
+1. Create a directory (sit) under src/main/resources/envProfile
+2. add config.properties file under new directory (sit)
+3. open maven (pom.xml) and add a new profile
+        <profile>
+            <id>sit</id>
+            <properties>
+                <build.profile.id>sit</build.profile.id>
+            </properties>
+        </profile>
+
+By default "dummy" environment is set to default.
+To change default profile, 
+set activeByDefault tag to true  to the profile you want as default
 
 ## Setup Jenkins
 1. Install and configure Jenkins

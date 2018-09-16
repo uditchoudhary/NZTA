@@ -1,20 +1,13 @@
 package dummy.restapiexample.com.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.RestAssured;
-import io.restassured.response.ResponseBody;
-import org.junit.Assert;
-
 
 import static dummy.restapiexample.com.utils.Util.buildUrl;
-import static dummy.restapiexample.com.utils.Util.getValue;
-import static dummy.restapiexample.com.utils.Util.setEmployeeProfile;
-import static io.restassured.RestAssured.given;
 
 /**
  * Created by udit on 11/09/18.
