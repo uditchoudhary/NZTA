@@ -4,7 +4,8 @@ This project is to showcase an API integration test framework structure and appl
 
 ## About the repository
 
-This repository contains a maven project to perform integration testing on dummy APIs
+This repository contains a maven project to perform integration testing on dummy APIs. 
+Dummy api service is provided by http://dummy.restapiexample.com/ .
 Test scenarios are written in Gherkin format executed by cucumber and JUnit. 
 Following tools and softwares are used to build the project: 
 * Java
