@@ -34,6 +34,29 @@ In terminal, run:
 mvn clean test
 ```
 
+## Setup Jenkins
+1. Install and configure Jenkins
+https://jenkins.io/doc/book/installing/
+2. Once configured, open browser and enter
+http://localhost:8080/
+3. Create new Item -> Free style project -> Ok
+4. Under Source Code Management -> Select Git
+- Add Repository URL and Credentials
+5. Under Build -> Add build step -> Select Execute shell
+- Give following command
+```
+mvn clean test
+```
+6. For Cucumber report ( add plugin )
+- under Post-build Actions, select Cucumber report
+```
+Json Reports Path  - build/cucumber-reports/
+File Include Pattern - Cucumber.json
+```
+7. Save the page.
+
+
+
 ## Who do I talk to?
 
 For more information Contact: 
